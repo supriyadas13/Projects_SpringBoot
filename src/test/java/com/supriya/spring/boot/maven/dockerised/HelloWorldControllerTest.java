@@ -20,7 +20,7 @@ public class HelloWorldControllerTest {
     private MockMvc mockMvc;
 
     @Test
-    public void caranaryIsInTheCoalMineTest(){
+    public void canaryIsInTheCoalMineTest(){
         try{
         mockMvc.perform(get("/coal-mine")).andDo(print()).andExpect(status().isOk())
         .andExpect(content().string("Tweet#"));
@@ -28,5 +28,7 @@ public class HelloWorldControllerTest {
             fail("exception : "+e.getLocalizedMessage());
         }
     }
+
+
 
 }

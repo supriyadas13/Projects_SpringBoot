@@ -1,6 +1,5 @@
 package com.supriya.spring.boot.maven.dockerised;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,9 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/")
 public class HelloWorldController {
     
-    @Autowired
-    @GetMapping("/coal-mine")
-        public String caranaryIsInTheCoalMine() {
+    @GetMapping("coal-mine")
+        public String canaryIsInTheCoalMine() {
             return "Tweet#";
         }
 

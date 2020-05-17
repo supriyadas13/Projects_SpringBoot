@@ -28,6 +28,15 @@ public class HelloWorldControllerTest {
             fail("exception : "+e.getLocalizedMessage());
         }
     }
+    @Test
+    public void helloTest(){
+        try{
+        mockMvc.perform(get("/hello")).andDo(print()).andExpect(status().isOk())
+        .andExpect(content().string("value : Hello World"));
+        } catch (Exception e){
+            fail("exception : "+e.getLocalizedMessage());
+        }
+    }
 
 
 

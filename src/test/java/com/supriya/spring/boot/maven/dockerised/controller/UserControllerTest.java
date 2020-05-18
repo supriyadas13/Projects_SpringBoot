@@ -38,13 +38,13 @@ public class UserControllerTest {
             .andExpect(jsonPath("$").isArray())
             .andExpect(jsonPath("$").isEmpty());
 
-            mockMvc.perform(put("/users/").content(mapper.writeValueAsString(new UserObject()))
+            mockMvc.perform(post("/users/").content(mapper.writeValueAsString(new UserObject()))
             .contentType(MediaType.APPLICATION_JSON)).andDo(print()).andExpect(status().isOk())
             .andExpect(jsonPath("$.firstName").isEmpty());
             
             mockMvc.perform(get("/users/")).andDo(print()).andExpect(status().isOk()).andExpect(jsonPath("$").isArray())
             .andExpect(jsonPath("$").isNotEmpty());
-            
+
         } catch (Exception e){
             fail("exception : "+e.getLocalizedMessage());
         }
